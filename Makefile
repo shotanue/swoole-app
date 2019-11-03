@@ -22,8 +22,8 @@ build:
 #	docker container run --rm --tty $(REGISTRY):$(CURRENT_LONG)-dev --no-ansi | grep 'swoole'
 
 push:
-	docker image push $(REGISTRY):$(CURERNT)
-	docker image push $(REGISTRY):$(CURERNT_LONG)
+	docker image push $(REGISTRY):$(CURRENT)
+	docker image push $(REGISTRY):$(CURRENT_LONG)
 
-	docker image push $(REGISTRY):$(CURERNT)-dev
-	docker image push $(REGISTRY):$(CURERNT_LONG)-dev
+	docker image push $(REGISTRY):$(CURRENT)-dev
+	docker image push $(REGISTRY):$(CURRENT_LONG)-dev
