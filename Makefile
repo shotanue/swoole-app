@@ -1,7 +1,7 @@
 CURRENT = 7.3
 CURRENT_LONG = 7.3-alpine3.10
 
-REGISTRY = docker.pkg.github.com/shotanue/swoole-app
+REGISTRY = docker.pkg.github.com/shotanue/swoole-app/docker
 
 .PHONY = all build test push
 
