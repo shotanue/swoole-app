@@ -14,8 +14,8 @@ jobs:
       - name: build image
         run: make build
 
-      - name: test image
-        run: make test
+#      - name: test image
+#        run: make test
 
       - name: docker login
         run: docker login docker.pkg.github.com -u shotanue -p $GITHUB_TOKEN
