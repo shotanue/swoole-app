@@ -28,12 +28,9 @@ docker image push docker.pkg.github.com/shotanue/swoole-app:7.3-alpine3.10-dev
 
 
 ## Tags
-- latest
 - 7.3
 - 7.3-alpine3.10
 
-
-- latest-dev
 - 7.3-dev
 - 7.3-alpine3.10-dev
 

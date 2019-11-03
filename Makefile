@@ -9,8 +9,8 @@ all: build test push
 
 build:
 
-	docker image build --target ship --tag $(REGISTRY):$(CURRENT) --tag $(REGISTRY):$(CURRENT_LONG) --tag $(REGISTRY):latest $(CURRENT)
-	docker image build --target ship-dev --tag $(REGISTRY):$(CURRENT)-dev --tag $(REGISTRY):$(CURRENT_LONG)-dev --tag $(REGISTRY):latest-dev $(CURRENT)
+	docker image build --target ship --tag $(REGISTRY):$(CURRENT) --tag $(REGISTRY):$(CURRENT_LONG) --tag $(CURRENT)
+	docker image build --target ship-dev --tag $(REGISTRY):$(CURRENT)-dev --tag $(REGISTRY):$(CURRENT_LONG)-dev --tag $(CURRENT)
 
 #test:
 #	docker container run --rm --tty $(REGISTRY):latest --no-ansi | grep 'swoole'
@@ -22,10 +22,8 @@ build:
 #	docker container run --rm --tty $(REGISTRY):$(CURRENT_LONG)-dev --no-ansi | grep 'swoole'
 
 push:
-	docker image push $(REGISTRY):latest
 	docker image push $(REGISTRY):$(CURERNT)
 	docker image push $(REGISTRY):$(CURERNT_LONG)
 
-	docker image push $(REGISTRY):latest-dev
 	docker image push $(REGISTRY):$(CURERNT)-dev
 	docker image push $(REGISTRY):$(CURERNT_LONG)-dev
