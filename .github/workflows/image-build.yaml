@@ -1,0 +1,26 @@
+name: BuildImage
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: build image
+        run: make build
+
+      - name: test image
+        run: make test
+
+      - name: docker login
+        run: docker login docker.pkg.github.com -u shotanue -p $GITHUB_TOKEN
+
+      - name: push image
+        run: make push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_TO_PUSH_TO_PACKAGE_REGISTRY }}
