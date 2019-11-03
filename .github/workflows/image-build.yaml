@@ -19,8 +19,8 @@ jobs:
 
       - name: docker login
         run: docker login docker.pkg.github.com -u shotanue -p $GITHUB_TOKEN
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_TO_PUSH_TO_PACKAGE_REGISTRY }}
 
       - name: push image
         run: make push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN_TO_PUSH_TO_PACKAGE_REGISTRY }}
